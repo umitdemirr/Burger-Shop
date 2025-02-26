@@ -34,23 +34,6 @@ public class MouseLook : MonoBehaviour
         body.Rotate(Vector3.up * rotX);
         #endregion
 
-        if (Input.GetKey(KeyCode.E))
-        {
-            zRot = Mathf.Lerp(zRot, -20.0f, 5f * Time.deltaTime);
-            isRotating = true;
-            playerScript.canMove = false;
-        }
-        if (Input.GetKey(KeyCode.Q))
-        {
-            zRot = Mathf.Lerp(zRot, 20.0f, 5f * Time.deltaTime);
-            isRotating = true;
-            playerScript.canMove = false;
-        }
-        if (Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.E))
-        {
-            isRotating = false;
-            playerScript.canMove = true;
-        }
         if (!isRotating) 
         {
             zRot = Mathf.Lerp(zRot, 0.0f, 5f * Time.deltaTime);
